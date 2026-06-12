@@ -54,6 +54,26 @@ screenshots/
 
 ---
 
+## Architecture Flow
+
+```text
+Terraform
+    ↓
+Kind Kubernetes Cluster
+    ↓
+ConfigMap
+    ↓
+Deployment (2 replicas)
+    ↓
+Service (ClusterIP)
+    ↓
+Prometheus
+    ↓
+Grafana
+```
+
+---
+
 ## Design Decisions
 
 ### Terraform
@@ -83,11 +103,9 @@ Grafana visualizes:
 
 ### Automation
 
-Ansible automates:
+An Ansible playbook is included to demonstrate how Terraform provisioning, Kubernetes deployment, and monitoring installation could be automated through a single workflow.
 
-- Terraform deployment
-- Kubernetes resource deployment
-- Monitoring stack installation
+This approach improves repeatability and reduces manual operational effort.
 
 This improves repeatability and reduces manual effort.
 
@@ -183,3 +201,9 @@ For a production environment I would:
 - Configure alerting
 - Implement high availability
 - Add persistent storage
+
+---
+
+## Conclusion
+
+This project demonstrates a complete DevOps workflow using Infrastructure as Code, Kubernetes application deployment, monitoring, and automation. The implementation prioritizes simplicity, reproducibility, and operational visibility while remaining extensible toward a production-grade platform.
