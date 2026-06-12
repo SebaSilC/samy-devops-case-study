@@ -1,6 +1,6 @@
 # SAMY DevOps Engineer Case Study
 
-This project demonstrates the deployment of a Kubernetes-based web application using Infrastructure as Code, monitoring and automation.
+This project demonstrates the deployment of a Kubernetes-based web application using Infrastructure as Code and monitoring.
 
 Components:
 
@@ -10,7 +10,6 @@ Components:
 - ConfigMap
 - Prometheus
 - Grafana
-- Ansible
 
 ---
 
@@ -33,9 +32,6 @@ k8s/
 ├── configmap.yaml
 ├── deployment.yaml
 └── service.yaml
-
-ansible/
-└── site.yml
 
 screenshots/
 ├── terraform-apply.png
@@ -101,14 +97,6 @@ Grafana visualizes:
 - Pod health
 - Uptime
 
-### Automation
-
-An Ansible playbook is included to demonstrate how Terraform provisioning, Kubernetes deployment, and monitoring installation could be automated through a single workflow.
-
-This approach improves repeatability and reduces manual operational effort.
-
-This improves repeatability and reduces manual effort.
-
 --- 
 
 ## Deployment
@@ -130,12 +118,6 @@ kubectl apply -f k8s/
 
 ```bash
 helm install monitoring prometheus-community/kube-prometheus-stack
-```
-
-### Automation
-
-```bash
-ansible-playbook site.yml
 ```
 
 ---
@@ -195,7 +177,7 @@ Grafana visualizes cluster resource consumption and health metrics.
 For a production environment I would:
 
 - Replace Kind with EKS
-- Implement CI/CD pipelines
+- Implement CI/CD pipelines for automated deployments
 - Add TLS certificates
 - Use external secrets management
 - Configure alerting
@@ -206,4 +188,4 @@ For a production environment I would:
 
 ## Conclusion
 
-This project demonstrates a complete DevOps workflow using Infrastructure as Code, Kubernetes application deployment, monitoring, and automation. The implementation prioritizes simplicity, reproducibility, and operational visibility while remaining extensible toward a production-grade platform.
+This project demonstrates a complete DevOps workflow using Infrastructure as Code, Kubernetes application deployment and monitoring. The implementation prioritizes simplicity, reproducibility and operational visibility while remaining extensible toward a production-grade platform.
