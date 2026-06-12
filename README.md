@@ -122,6 +122,56 @@ ansible-playbook site.yml
 
 ---
 
+## Deployment Evidence
+
+### Terraform Apply
+
+Terraform successfully provisioned the Kind Kubernetes cluster.
+
+![Terraform Apply](screenshots/terraform-apply.png)
+
+---
+
+### Kubernetes Cluster
+
+The Kubernetes control plane was successfully created and reached Ready state.
+
+![Kubernetes Nodes](screenshots/kubectl-get-nodes.png)
+
+---
+
+### Application Deployment
+
+The Nginx deployment was deployed with two replicas.
+
+![Running Pods](screenshots/kubectl-get-pods.png)
+
+---
+
+### Service Exposure
+
+A ClusterIP service provides internal access to the application.
+
+![Kubernetes Service](screenshots/kubectl-get-svc.png)
+
+---
+
+### Prometheus Monitoring
+
+Prometheus successfully discovered and scraped cluster targets.
+
+![Prometheus Targets](screenshots/prometheus-targets.png)
+
+---
+
+### Grafana Dashboard
+
+Grafana visualizes cluster resource consumption and health metrics.
+
+![Grafana Dashboard](screenshots/grafana-dashboard.png)
+
+---
+
 ## Production Improvements
 
 For a production environment I would:
