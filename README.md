@@ -36,6 +36,14 @@ k8s/
 
 ansible/
 └── site.yml
+
+screenshots/
+├── terraform-apply.png
+├── kubectl-get-nodes.png
+├── kubectl-get-pods.png
+├── kubectl-get-svc.png
+├── prometheus-targets.png
+└── grafana-dashboard.png
 ```
 
 ---
