@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  connection: local
+
+  tasks:
+
+  - name: Apply Terraform
+    command: terraform apply -auto-approve
+    args:
+      chdir: ../terraform
+
+  - name: Deploy Kubernetes Resources
+    command: kubectl apply -f ../k8s
+
+  - name: Install Monitoring
+    command: >
+      helm install monitoring
+      prometheus-community/kube-prometheus-stack
