@@ -122,7 +122,7 @@ helm install monitoring prometheus-community/kube-prometheus-stack
 
 ---
 
-## Deployment Evidence
+## Deployment Screenshots
 
 ### Terraform Apply
 
